@@ -12,8 +12,6 @@ import (
 )
 
 func main() {
-	// Пререквизит: создать переменную окружения BOT_TOKEN
-	// export BOT_TOKEN="ВАШ_ТОКЕН_OT_BOTFATHER"
 	err := godotenv.Load()
 	if err != nil {
 		log.Println(".env не найден")
@@ -44,14 +42,6 @@ func main() {
 		return c.Send("Ну поздравляю, ты запустил ЗАЛУПНЫЙ бот да еще и на v4.")
 	})
 
-	// myBot.Handle("/zalupa", func (c telebot.Context) error {
-
-	// })
-
-	// myBot.Handle(telebot.OnText, func (c telebot.Context) error {
-
-	// })
-
 	giflist := []string{"https://tenor.com/ru/view/gachimuchi-gif-20116037",
 		"https://tenor.com/ru/view/gachi-gachi-muchi-gym-gif-26208724",
 		"https://tenor.com/ru/view/ricardo-milos-dance-flex-meme-gif-13919144",
@@ -76,7 +66,7 @@ func main() {
 		if strings.Contains(text, "япошка") {
 			file := &telebot.Audio{
 				File: telebot.FromDisk("./mp3/Yamatekudasai.mp3"),
-				Caption: "🎵 Наслаждайся пёс",
+				Caption: "🎵 Наслаждайся",
 				Title: "ЯМАТЕКУДАСАЙ!!!",
 			}
 
